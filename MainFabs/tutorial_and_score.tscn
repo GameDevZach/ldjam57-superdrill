@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://yxgwiiiwto1q"]
+
+[ext_resource type="Script" uid="uid://c5o3mjbkxu4go" path="res://MainFabs/score_observer.gd" id="1_peyo2"]
+
+[node name="Control2" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_peyo2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 37.0
+offset_right = 398.0
+offset_bottom = 152.0
+bbcode_enabled = true
+text = "Keep clicking to break the geode open.
+[color=orange]Copper[/color] 8-12 pts
+[color=gray]Iron[/color] 48-72 pts
+[color=gold]Gold [/color] 384-576 pts"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 211.0
+offset_right = 428.0
+offset_bottom = 254.0
+theme_override_font_sizes/font_size = 30
+text = "1000pts"
+horizontal_alignment = 1

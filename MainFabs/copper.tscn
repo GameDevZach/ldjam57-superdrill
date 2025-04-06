@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv3f42h6kdkun"]
+
+[ext_resource type="Script" uid="uid://clqyow8lblvfw" path="res://MainFabs/ore.gd" id="1_imjjk"]
+[ext_resource type="Texture2D" uid="uid://bijppnjssestm" path="res://Art/Blocks/OreCopper.png" id="1_sl7rh"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_imjjk")
+basePoints = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sl7rh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(4, -14, -4, -12, -16, 1, -4, 12, 8, 11, 13, -3)

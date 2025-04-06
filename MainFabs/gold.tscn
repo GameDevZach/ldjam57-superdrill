@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5q84ewydddg2"]
+
+[ext_resource type="Script" uid="uid://clqyow8lblvfw" path="res://MainFabs/ore.gd" id="1_jqwdn"]
+[ext_resource type="Texture2D" uid="uid://ejqe4m0r2yka" path="res://Art/Blocks/OreGold.png" id="2_jqwdn"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_jqwdn")
+basePoints = 480
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jqwdn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(33, -21, -4, -21, -32, 7, -31, 24, 0, 21, 28, 6)

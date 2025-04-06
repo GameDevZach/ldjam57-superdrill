@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://dlhptrcy5axtq"]
+
+[ext_resource type="Texture2D" uid="uid://jcygt5biu063" path="res://Art/BG/DepthsBG.png" id="1_dduug"]
+[ext_resource type="PackedScene" uid="uid://dd1o8cpfmb2tg" path="res://MainFabs/geode.tscn" id="2_dduug"]
+[ext_resource type="PackedScene" uid="uid://b0kcqe001pqk6" path="res://MainFabs/topscores.tscn" id="3_v0i5o"]
+[ext_resource type="PackedScene" uid="uid://c35k7howfndel" path="res://MainFabs/scoresubmitter.tscn" id="4_xij71"]
+[ext_resource type="PackedScene" uid="uid://yxgwiiiwto1q" path="res://MainFabs/tutorial_and_score.tscn" id="5_u8tco"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v0i5o"]
+distance = -725.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xij71"]
+size = Vector2(188, 736)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8tco"]
+size = Vector2(308.5, 727.125)
+
+[node name="Geodebreaker" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1013.0
+offset_bottom = 753.0
+texture = ExtResource("1_dduug")
+stretch_mode = 1
+
+[node name="Area2D" parent="." instance=ExtResource("2_dduug")]
+position = Vector2(350, 384)
+
+[node name="topscores" parent="." instance=ExtResource("3_v0i5o")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_v0i5o")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-84, 358)
+shape = SubResource("RectangleShape2D_xij71")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(825.25, 362.438)
+shape = SubResource("RectangleShape2D_u8tco")
+
+[node name="Control" parent="." instance=ExtResource("4_xij71")]
+offset_left = 631.0
+offset_top = 495.0
+offset_right = 1055.0
+offset_bottom = 562.0
+
+[node name="Control2" parent="." instance=ExtResource("5_u8tco")]

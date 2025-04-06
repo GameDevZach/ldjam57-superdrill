@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://c35k7howfndel"]
+
+[ext_resource type="Script" uid="uid://cqrtsmvym4m4c" path="res://MainFabs/scoresubmitter.gd" id="1_txp5s"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 424.0
+offset_bottom = 67.0
+script = ExtResource("1_txp5s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 354.0
+offset_bottom = 56.0
+alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter Username (12 char limit)"
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Submit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = -36.0
+offset_right = 304.0
+offset_bottom = -7.0
+text = "New personal best! Submit online?"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 69.0
+offset_right = 242.0
+offset_bottom = 110.0
+horizontal_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

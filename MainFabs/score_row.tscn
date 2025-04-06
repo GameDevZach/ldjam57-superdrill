@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://gptkkq1gsqoo"]
+
+[ext_resource type="Script" uid="uid://b416fupt65x8l" path="res://MainFabs/score_row.gd" id="1_udjjj"]
+
+[node name="HBoxContainer2" type="HBoxContainer"]
+script = ExtResource("1_udjjj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Zac"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "100pts"
+horizontal_alignment = 2
